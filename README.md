@@ -1,6 +1,7 @@
-# 操作系统实验指南 - Xv6 Copy-on-Write Fork
+# 操作系统 - Xv6 Copy-on-Write Fork
 
-本实验将帮助您熟悉 xv6 操作系统及其系统调用，特别是实现 Copy-on-Write (COW) Fork 机制。
+Score 121 /150
+
 
 ## 目录
 
