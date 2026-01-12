@@ -2,7 +2,7 @@
 
 Score 121 /150
 
-注意将 /xv6-labs/ModifyGIT 文件夹的文件名改为 .git
+为了xv6能正常在qemu中运行，需要将 /xv6-labs/ModifyGIT 文件夹的文件名改为 .git
 
 ps:我如果不把 .git 文件夹改名的话无法正常上传文件 
 
