@@ -1,0 +1,14 @@
+77da51a3c309a4e41a7514982a34f064a44001a9		branch 'util' of https://gitee.com/yanjun-wen/xv6-labs
+0c698a33b75dbb8df310c4c974c34a3e1bf96b04	not-for-merge	branch 'cow' of https://gitee.com/yanjun-wen/xv6-labs
+af77fb457c5fabb9a7d4346db45d4a60a513fb9c	not-for-merge	branch 'debugging-demo' of https://gitee.com/yanjun-wen/xv6-labs
+a6af72924b115c1177d18d9b1eaba56623e4248b	not-for-merge	branch 'fs' of https://gitee.com/yanjun-wen/xv6-labs
+0de5ac779602f562a038e5ad27163d85bc71638b	not-for-merge	branch 'lock' of https://gitee.com/yanjun-wen/xv6-labs
+b20ef9d0210fd7d9403acde1857eed1b9880c0b2	not-for-merge	branch 'mmap' of https://gitee.com/yanjun-wen/xv6-labs
+cfae93475dfb4cb5cfe264f4c029136e1447c262	not-for-merge	branch 'net' of https://gitee.com/yanjun-wen/xv6-labs
+9bfd5669e6c7f7fbb97f1b2e3e0e5f4541a2e570	not-for-merge	branch 'orig' of https://gitee.com/yanjun-wen/xv6-labs
+9aa6910afdab31fa11e30a26083d99dd00c92136	not-for-merge	branch 'pgtbl' of https://gitee.com/yanjun-wen/xv6-labs
+7a22dd8316044560b566d35369a5019f64115dff	not-for-merge	branch 'pure' of https://gitee.com/yanjun-wen/xv6-labs
+74c1eba516fdb0ec1a17b16be7e76613ccba92bf	not-for-merge	branch 'riscv' of https://gitee.com/yanjun-wen/xv6-labs
+d5b6f4f7b0021ef09964a7c3f7656f81696d0c1f	not-for-merge	branch 'syscall' of https://gitee.com/yanjun-wen/xv6-labs
+573a75b62be76233fec48b5dc6bc55f3352bcdf9	not-for-merge	branch 'thread' of https://gitee.com/yanjun-wen/xv6-labs
+849cf1a06ffe93182149fbc2160654512dbf6699	not-for-merge	branch 'traps' of https://gitee.com/yanjun-wen/xv6-labs

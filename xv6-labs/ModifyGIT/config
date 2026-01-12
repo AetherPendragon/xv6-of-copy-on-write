@@ -1,0 +1,16 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://gitee.com/yanjun-wen/xv6-labs.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "util"]
+	remote = origin
+	merge = refs/heads/util
+	vscode-merge-base = origin/util
+[branch "cow"]
+	remote = origin
+	merge = refs/heads/cow
+	vscode-merge-base = origin/cow

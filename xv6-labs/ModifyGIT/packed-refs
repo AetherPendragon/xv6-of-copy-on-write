@@ -1,0 +1,15 @@
+# pack-refs with: peeled fully-peeled sorted 
+0c698a33b75dbb8df310c4c974c34a3e1bf96b04 refs/remotes/origin/cow
+af77fb457c5fabb9a7d4346db45d4a60a513fb9c refs/remotes/origin/debugging-demo
+a6af72924b115c1177d18d9b1eaba56623e4248b refs/remotes/origin/fs
+0de5ac779602f562a038e5ad27163d85bc71638b refs/remotes/origin/lock
+b20ef9d0210fd7d9403acde1857eed1b9880c0b2 refs/remotes/origin/mmap
+cfae93475dfb4cb5cfe264f4c029136e1447c262 refs/remotes/origin/net
+9bfd5669e6c7f7fbb97f1b2e3e0e5f4541a2e570 refs/remotes/origin/orig
+9aa6910afdab31fa11e30a26083d99dd00c92136 refs/remotes/origin/pgtbl
+7a22dd8316044560b566d35369a5019f64115dff refs/remotes/origin/pure
+74c1eba516fdb0ec1a17b16be7e76613ccba92bf refs/remotes/origin/riscv
+d5b6f4f7b0021ef09964a7c3f7656f81696d0c1f refs/remotes/origin/syscall
+573a75b62be76233fec48b5dc6bc55f3352bcdf9 refs/remotes/origin/thread
+849cf1a06ffe93182149fbc2160654512dbf6699 refs/remotes/origin/traps
+77da51a3c309a4e41a7514982a34f064a44001a9 refs/remotes/origin/util
