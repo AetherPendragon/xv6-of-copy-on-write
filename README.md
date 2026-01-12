@@ -2,6 +2,10 @@
 
 Score 121 /150
 
+注意将 /xv6-labs/ModifyGIT 文件夹的文件名改为 .git
+
+ps:我如果不把 .git 文件夹改名的话无法正常上传文件 
+
 
 ## 目录
 
@@ -21,57 +25,6 @@ Score 121 /150
 ```bash
 sudo apt-get install git build-essential gdb-multiarch qemu-system-misc gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu
 ```
-
-### Arch Linux
-
-```bash
-sudo pacman -S riscv64-linux-gnu-binutils riscv64-linux-gnu-gcc riscv64-linux-gnu-gdb qemu-emulators-full
-```
-
-### Windows (使用 WSL 2)
-
-**重要提示：请确保使用 WSL 2，而不是 WSL 1**
-
-1. 首先确保已安装 [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-2. 从 Microsoft Store 安装 [Ubuntu 20.04](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6)
-3. 验证 WSL 版本：
-   ```bash
-   wsl -l -v
-   ```
-   确认显示的是 WSL 2
-4. 在 Ubuntu 中安装工具：
-   ```bash
-   sudo apt-get update && sudo apt-get upgrade
-   sudo apt-get install git build-essential gdb-multiarch qemu-system-misc gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu
-   ```
-
-### macOS
-
-1. 安装开发者工具：
-   ```bash
-   xcode-select --install
-   ```
-
-2. 安装 Homebrew（如果尚未安装）：
-   ```bash
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
-
-3. 安装 RISC-V 工具链：
-   ```bash
-   brew tap riscv/riscv
-   brew install riscv-tools
-   ```
-
-4. 更新 PATH 环境变量（在 ~/.bashrc 或 ~/.zshrc 中添加）：
-   ```bash
-   PATH=$PATH:/usr/local/opt/riscv-gnu-toolchain/bin
-   ```
-
-5. 安装 QEMU：
-   ```bash
-   brew install qemu
-   ```
 
 ### 验证安装
 
