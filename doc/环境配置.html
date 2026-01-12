@@ -1,0 +1,152 @@
+<HTML>
+
+<HEAD>
+<TITLE>
+OS Labs / Fall 2024
+</TITLE>
+</HEAD>
+
+<BODY BGCOLOR=#ffffff TEXT=#000000>
+
+<H1>
+Tools Used
+</H1>
+
+<p>For this class you'll need the RISC-V versions of a couple different tools:
+QEMU 5.1+, GDB 8.3+, GCC, and Binutils.</p>
+
+<p>If you are having trouble getting things set up, please contact with the teachers. We're happy to help!</p>
+
+<h3>Debian or Ubuntu</h3>
+<pre>sudo apt-get install git build-essential gdb-multiarch qemu-system-misc gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu </pre>
+
+<h3>Arch Linux</h3>
+<pre>sudo pacman -S riscv64-linux-gnu-binutils riscv64-linux-gnu-gcc riscv64-linux-gnu-gdb qemu-emulators-full</pre>
+
+<h3>Installing on Windows</h3>
+
+<p> Students running Windows are encouraged to either install Linux
+on their local machine or use WSL 2 (Windows Subsystem for Linux 2).</p>
+
+<p> We also encourage students to install the <a href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701">Windows Terminal</a> tool in lieu of using Powershell/Command Prompt. </p>
+
+<p> To use WSL 2, first make sure you have the <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a> installed. Then add <a href="https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6">Ubuntu 20.04 from the Microsoft Store</a>. Afterwards you should be able to launch Ubuntu and interact with the machine.</p>
+
+<p> <i> IMPORTANT: Make sure that you are running version 2 of WSL. WSL 1 is implemented with a different architecture than WSL 2, which may cause future problems with the 6.1810 labs. To sanity check, run <code> wsl -l -v </code> in a Windows terminal to confirm that WSL 2 and the correct Ubuntu version are installed. </i> </p>
+
+<p>To install all the software you need for this class, run:</p>
+
+<pre>
+$ sudo apt-get update && sudo apt-get upgrade
+$ sudo apt-get install git build-essential gdb-multiarch qemu-system-misc gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu
+</pre>
+
+<p>From Windows, you can access all of your WSL files under the <i>"\\wsl$\"</i>
+directory. For instance, the home directory for an Ubuntu 20.04 installation should
+be at <i>"\\wsl$\Ubuntu-20.04\home\&lt;username&gt;\"</i>. </p>
+
+<h3>Running a Linux VM</h3>
+<p>If you're running an operating system on which it's not convenient to
+install the RISC-V tools, you may find it useful to run a Linux
+virtual machine (VM) and install the tools in the VM.
+  Installing a Linux virtual machine is a two step process.  First, you download
+  the virtualization platform.</p>
+
+  <ul><li><a href='https://www.virtualbox.org/'><strong>VirtualBox</strong></a>
+  (free for Mac, Linux, Windows) &mdash; <a
+  href='https://www.virtualbox.org/wiki/Downloads'>Download
+  page</a></li>
+  <li><a href='http://www.vmware.com/products/player/'>VMware
+  Player</a> (free for Linux and Windows, registration required)</li>
+  <li><a href='http://www.vmware.com/products/fusion/'>VMware
+  Fusion</a> (Downloadable from IS&T for free).
+  </ul>
+
+  <p>VirtualBox is a little slower and less flexible, but free!</p>
+
+  <p>Once the virtualization platform is installed, download a boot
+  disk image for the Linux distribution of your choice.</p>
+
+  <ul><li><a
+  href='http://www.ubuntu.com/download/desktop'>Ubuntu
+  Desktop</a> is one option.</li>
+  </ul>
+
+  <p>This will download a file named something like
+  <tt>ubuntu-20.04.3-desktop-amd64.iso</tt>.  Start up your
+  virtualization platform and create a new (64-bit) virtual machine.
+  Use the downloaded Ubuntu image as a boot disk; the
+  procedure differs among VMs but shouldn't be too difficult.
+</p>
+
+<h3>Installing on macOS</h3>
+
+<p>First, install developer tools:
+
+<pre>
+$ xcode-select --install
+</pre>
+
+<p>Next, install <a href="https://brew.sh/">Homebrew</a>, a package manager for macOS:
+
+<pre>
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+</pre>
+
+<p>Next, install the <a href="https://github.com/riscv/homebrew-riscv">RISC-V compiler toolchain</a>:
+
+<pre>
+$ brew tap riscv/riscv
+$ brew install riscv-tools
+</pre>
+
+<p>The brew formula may not link into <tt>/usr/local</tt>. You will need to
+update your shell's rc file (e.g. <a
+href="https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html">~/.bashrc</a>)
+to add the appropriate directory to <a
+href="http://www.linfo.org/path_env_var.html">$PATH</a>.
+
+<pre>
+PATH=$PATH:/usr/local/opt/riscv-gnu-toolchain/bin
+</pre>
+
+<p>Finally, install QEMU:
+
+<pre>
+brew install qemu
+</pre>
+
+<h2> Testing your Installation </h2>
+<p>To test your installation, you should be able to compile and run xv6. You can try this by following the instructions in the <a href="labs/util.html">first lab</a>.</p>
+
+<p>You can also double check your installation is correct by running the following:</p>
+
+<pre>
+$ qemu-system-riscv64 --version
+QEMU emulator version 5.1.0
+</pre>
+
+<p>And at least one RISC-V version of GCC:</p>
+
+<pre>
+$ riscv64-linux-gnu-gcc --version
+riscv64-linux-gnu-gcc (Debian 10.3.0-8) 10.3.0
+...
+</pre>
+
+<pre>
+$ riscv64-unknown-elf-gcc --version
+riscv64-unknown-elf-gcc (GCC) 10.1.0
+...
+</pre>
+
+<pre>
+$ riscv64-unknown-linux-gnu-gcc --version
+riscv64-unknown-linux-gnu-gcc (GCC) 10.1.0
+...
+</pre>
+
+<!-- End Page Content -->
+
+</BODY>
+</HTML>

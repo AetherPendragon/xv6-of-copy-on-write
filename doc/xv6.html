@@ -1,0 +1,117 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lab: Xv6 and Unix utilities</title>
+<link rel="stylesheet" href="labs.css" type="text/css" />
+<script src="guidance.js"></script>
+</head>
+
+<body>
+
+<h1>Lab: Xv6 and Unix utilities</h1>
+
+<p>This lab will familiarize you with xv6 and its system calls.
+
+<h2>Boot xv6 <script>g("easy")</script></h2>
+
+<p>Fetch the git repository for the xv6 source for the lab:
+<pre>
+$ <kbd>git clone https://gitee.com/yanjun-wen/xv6-labs.git</kbd>
+Cloning into 'xv6-labs'...
+...
+$ <kbd>cd xv6-labs</kbd>
+</pre>
+
+<p>The files you will need for this and subsequent lab assignments
+are distributed using
+the <a href="http://www.git-scm.com/">Git</a> version control system.
+For each of the labs you will check out
+a version of xv6 tailored for that lab.
+To learn more about Git, take a look at the
+<a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html">Git
+user's manual</a>, or, you may find this
+<a href="http://eagain.net/articles/git-for-computer-scientists/">CS-oriented
+overview of Git</a> useful.
+Git allows you to keep track of the changes you make to the code.
+For example, if you are finished with one of the exercises, and want
+to checkpoint your progress, you can <i>commit</i> your changes
+by running:
+</p>
+<pre>
+$ <kbd>git commit -am 'my solution for util lab exercise 1'</kbd>
+Created commit 60d2135: my solution for util lab exercise 1
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+$
+</pre>
+
+<p>
+You can keep track of your changes by using the <kbd>git diff</kbd>
+command.  Running <kbd>git diff</kbd> will display the changes to your
+code since your last commit, and <kbd>git diff
+origin/util</kbd> will display the changes relative to the
+initial <tt>util</tt> code.  Here, <tt>origin/util</tt> is the
+name of the git branch for this lab.
+</p>
+
+<p>Build and run xv6:
+<pre>
+$ <kbd>make qemu</kbd>
+riscv64-unknown-elf-gcc    -c -o kernel/entry.o kernel/entry.S
+riscv64-unknown-elf-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -DSOL_UTIL -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie   -c -o kernel/start.o kernel/start.c
+...
+riscv64-unknown-elf-ld -z max-page-size=4096 -N -e main -Ttext 0 -o user/_zombie user/zombie.o user/ulib.o user/usys.o user/printf.o user/umalloc.o
+riscv64-unknown-elf-objdump -S user/_zombie > user/zombie.asm
+riscv64-unknown-elf-objdump -t user/_zombie | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > user/zombie.sym
+mkfs/mkfs fs.img README  user/xargstest.sh user/_cat user/_echo user/_forktest user/_grep user/_init user/_kill user/_ln user/_ls user/_mkdir user/_rm user/_sh user/_stressfs user/_usertests user/_grind user/_wc user/_zombie
+nmeta 46 (boot, super, log blocks 30 inode blocks 13, bitmap blocks 1) blocks 954 total 1000
+balloc: first 591 blocks have been allocated
+balloc: write bitmap block at sector 45
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+hart 2 starting
+hart 1 starting
+init: starting sh
+$
+</pre>
+
+<p>
+If you type <tt>ls</tt> at the prompt, you should see output similar
+to the following:
+<pre>
+$ <kbd>ls</kbd>
+.              1 1 1024
+..             1 1 1024
+README         2 2 2227
+xargstest.sh   2 3 93
+cat            2 4 32864
+echo           2 5 31720
+forktest       2 6 15856
+grep           2 7 36240
+init           2 8 32216
+kill           2 9 31680
+ln             2 10 31504
+ls             2 11 34808
+mkdir          2 12 31736
+rm             2 13 31720
+sh             2 14 54168
+stressfs       2 15 32608
+usertests      2 16 178800
+grind          2 17 47528
+wc             2 18 33816
+zombie         2 19 31080
+console        3 20 0
+</pre>
+These are the files that <tt>mkfs</tt> includes in the
+initial file system; most are programs you can run.  You just ran one of them: <tt>ls</tt>.
+
+<p>xv6 has no <tt>ps</tt> command, but, if you type <kbd>Ctrl-p</kbd>,
+the kernel will print information about each process.
+If you try it now, you'll see two lines: one for <tt>init</tt>,
+and one for <tt>sh</tt>.
+
+<p>To quit qemu type: <kbd>Ctrl-a x</kbd> (press <kbd>Ctrl</kbd> and <kbd>a</kbd> at the same time, followed by <kbd>x</kbd>).
+
+</body>
+</html>
