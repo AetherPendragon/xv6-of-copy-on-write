@@ -1,0 +1,23 @@
+
+xv6 kernel is booting
+
+hart 2 starting
+hart 1 starting
+init: starting sh
+$ cowstats_test
+Starting COW stats tests...
+cowstats() failed: saved_memory should be 33554432 byte(s) instead of 33591296 byte(s)
+simple: ok
+cowstats() failed: saved_memory should be 33554432 byte(s) instead of 33591296 byte(s)
+simple: ok
+Running three process tests...
+cowstats() failed in threetest(pid2): expected 13421772, got 13422592
+three: ok
+cowstats() failed in threetest(pid2): expected 13421772, got 13422592
+three: ok
+cowstats() failed in threetest(pid2): expected 13421772, got 13422592
+three: ok
+Running file I/O test...
+file: ok
+ALL COW TESTS PASSED
+$ qemu-system-riscv64: terminating on signal 15 from pid 110655 (make)

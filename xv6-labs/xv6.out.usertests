@@ -1,0 +1,13 @@
+
+xv6 kernel is booting
+
+hart 2 starting
+hart 1 starting
+init: starting sh
+$ usertests -q
+usertests starting
+test copyin: OK
+test copyout: usertrap(): bad address 0x0000000000056e0a pid=6
+FAILED
+SOME TESTS FAILED
+$ qemu-system-riscv64: terminating on signal 15 from pid 110569 (make)
